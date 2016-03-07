@@ -4,12 +4,12 @@
 import codecs
 
 INPUT_FILE = "D:\\Grad\\news_xml.dat"
-OUTPUT_FILE = "D:\\Grad\\news_part.dat"
+OUTPUT_FILE = "D:\\Gdesign\\gb2312.dat"
 
 
 def countline():
 
-    input_data = codecs.open(INPUT_FILE, 'rb')
+    input_data = open(INPUT_FILE, 'rb')
     output_data = codecs.open(OUTPUT_FILE, 'wb')
 
     count = 0
