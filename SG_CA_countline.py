@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
+#从原始的xml文件里挑选出来正文
 
 import codecs
 
