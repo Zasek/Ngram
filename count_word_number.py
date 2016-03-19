@@ -13,12 +13,13 @@ def count_number():
     for line in input_data.readlines():
 
         wordlist = line.split('/')
-        print(wordlist)
+#       print(wordlist)
         per_num = len(wordlist)-3
         num += per_num
-        break
 
     print(num)
+
+    #总词数是22252581个
 
 if __name__ == '__main__':
     count_number()

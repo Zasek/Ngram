@@ -4,12 +4,21 @@
 
 import codecs
 
-INPUT_FILE = "D:\\Gdesign\\news_sub.utf8"
+INPUT_FILE = "D:\\Gdesign\\sougouDic.utf8"
 
 
 def readpassage():
 
-    print("hello")
+    input_data = codecs.open(INPUT_FILE, 'r', 'utf-8')
+    line = input_data.readline()
+    line = line.replace('\n', '')
+    print(line)
+    line = input_data.readline()
+    line = line.replace('\n', '')
+    print(line)
+    line = input_data.readline()
+    line = line.replace('\n', '')
+    print(line)
 
 if __name__ == '__main__':
     readpassage()
