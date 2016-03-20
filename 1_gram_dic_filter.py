@@ -25,11 +25,6 @@ if __name__ == '__main__':
         n_word = n_word.replace('\n', '')
         dic_tree.insert(n_word)
 
-    if dic_tree.find("志坚行苦"):
-        print("OOOOHHH")
-    else:
-        print("FUCK")
-
     input_data = codecs.open(INPUT_FILE, 'r', 'utf-8')
     for line in input_data.readlines():
         words = line.split(' ')
