@@ -2,10 +2,10 @@ import codecs
 import re
 import Trie_tree
 
-INPUT_FILE = "D:\\Gdesign\\Interesting.utf8"
+INPUT_FILE = "D:\\Gdesign\\kai_2_gram_freq_test.utf8"
 STOPWORDS = "D:\\Gdesign\\stopwords.utf8"
 SOUGOUDIC = "D:\\Gdesign\\sougouDic.utf8"
-OUTPUT_FILE = "D:\\Gdesign\\interesting_kai.utf8"
+OUTPUT_FILE = "D:\\Gdesign\\kai_2_gram_freq_test_filtered.utf8"
 
 
 def isStop(word):
@@ -141,9 +141,9 @@ if __name__ == '__main__':
     input_data = codecs.open(INPUT_FILE, 'r', 'utf-8')
     for line in input_data.readlines():
         words = line.split(' ')
-        word = words[2]
-        word = word.replace('\n', '')
-        # word = words[0]
+        # word = words[2]
+        # word = word.replace('\n', '')
+        word = words[0]
         if stop_tree.find(word):
             continue
         if dic_tree.find(word):

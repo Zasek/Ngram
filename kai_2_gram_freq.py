@@ -3,9 +3,10 @@
 
 import codecs
 import Trie_tree
+from isStop import isStop
 
 INPUT_FILE = "D:\\Gdesign\\kai_news_sub_2.utf8"
-OUTPUT_FILE = "D:\\Gdesign\\kai_2_gram_freq.utf8"
+OUTPUT_FILE = "D:\\Gdesign\\kai_2_gram_freq_test.utf8"
 
 
 def two_gram_process():
@@ -22,7 +23,10 @@ def two_gram_process():
             length = len(words)
             i = 0
             while i < length-3:
-                two_gram = words[i:i+2]
+                if isStop(words[i]) or isStop(words[i+1]):
+                    i += 1
+                    continue
+                two_gram = words[i]+words[i+1]
                 news_tree.insert(two_gram)
                 i += 1
     freq_list = news_tree.getrecord()
