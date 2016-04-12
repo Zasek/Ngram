@@ -20,7 +20,7 @@ def two_gram_process():
         for sent in sents:
             words = sent.split('/')
             length = len(words)
-            i = 1
+            i = 0
             while i < length-3:
                 two_gram = words[i:i+2]
                 news_tree.insert(two_gram)

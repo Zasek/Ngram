@@ -8,7 +8,7 @@ import re
 ORI_FILE = "D:\\Gdesign\\kai_news_sub_2.utf8"
 OUT_FILE = "D:\\Gdesign\\Intresting.utf8"
 SOUGOUDIC = "D:\\Gdesign\\sougouDic.utf8"
-TWO_TABLE = "D:\\Gdesign\\kai_2_gram_dic_filtered.utf8"
+TWO_TABLE = "D:\\Gdesign\\kai_2_gram_fin.utf8"
 SUM_WORDS = 22252581
 
 
