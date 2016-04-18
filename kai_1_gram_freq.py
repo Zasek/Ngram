@@ -3,12 +3,12 @@
 
 import codecs
 import Trie_tree
+#
+# INPUT_FILE = "D:\\Gdesign\\kai_news_sub_2.utf8"
+# OUTPUT_FILE = "D:\\Gdesign\\kai_1_gram_freq.utf8"
 
-INPUT_FILE = "D:\\Gdesign\\kai_news_sub_2.utf8"
-OUTPUT_FILE = "D:\\Gdesign\\kai_1_gram_freq.utf8"
 
-
-def one_gram_process():
+def one_gram_process(INPUT_FILE, OUTPUT_FILE):
 
     input_data = codecs.open(INPUT_FILE, 'r', 'utf-8')
     output_data = codecs.open(OUTPUT_FILE, 'w', 'utf-8')
@@ -42,6 +42,3 @@ def one_gram_process():
 #         else:
 #             prc_list[item[0]] = item[1]
 #     return prc_list
-
-if __name__ == '__main__':
-    one_gram_process()

@@ -4,12 +4,12 @@
 import codecs
 import Trie_tree
 from isStop import isStop
+#
+# INPUT_FILE = "D:\\Gdesign\\kai_news_sub_2.utf8"
+# OUTPUT_FILE = "D:\\Gdesign\\kai_2_gram_freq_test.utf8"
 
-INPUT_FILE = "D:\\Gdesign\\kai_news_sub_2.utf8"
-OUTPUT_FILE = "D:\\Gdesign\\kai_2_gram_freq_test.utf8"
 
-
-def two_gram_process():
+def two_gram_process(INPUT_FILE, OUTPUT_FILE):
 
     input_data = codecs.open(INPUT_FILE, 'r', 'utf-8')
     output_data = codecs.open(OUTPUT_FILE, 'w', 'utf-8')
@@ -36,6 +36,3 @@ def two_gram_process():
             output_data.write(item[0]+"     "+str(item[1])+"\n")
     input_data.close()
     output_data.close()
-
-if __name__ == '__main__':
-    two_gram_process()
