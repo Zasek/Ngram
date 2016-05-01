@@ -2,10 +2,10 @@ import codecs
 import re
 import Trie_tree
 
-INPUT_FILE = "D:\\Gdesign\\kai_1_gram_freq.utf8"
+INPUT_FILE = "D:\\Gdesign\\kaini_1_gram_freq.utf8"
 STOPWORDS = "D:\\Gdesign\\stopwords.utf8"
 SOUGOUDIC = "D:\\Gdesign\\sougouDic.utf8"
-OUTPUT_FILE = "D:\\Gdesign\\kai_1_gram_dic_filtered.utf8"
+OUTPUT_FILE = "D:\\Gdesign\\kaini_1_gram_dic_filtered.utf8"
 
 
 def isStop(word):
@@ -149,8 +149,8 @@ if __name__ == '__main__':
             continue
         if re.match(r'.*\d', word):
             continue
-        if isStop(word):
-            continue
+        # if isStop(word):
+        #     continue
         output_data.write(line)
 
     output_data.close()

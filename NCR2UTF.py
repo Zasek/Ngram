@@ -3,8 +3,8 @@
 
 import codecs
 
-INPUT_FILE = "D:\\Gdesign\\kai_news_sub.utf8"
-OUTPUT_FILE = "D:\\Gdesign\\kai_news_sub_2.utf8"
+INPUT_FILE = "D:\\Gdesign\\kaini_news_sub.utf8"
+OUTPUT_FILE = "D:\\Gdesign\\kaini_news_sub_2.utf8"
 
 if __name__ == '__main__':
 

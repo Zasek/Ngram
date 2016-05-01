@@ -6,10 +6,11 @@ import re
 import codecs
 
 INPUT_FILE = "D:\\Gdesign\\news_done.utf8"
-OUTPUT_FILE = "D:\\Gdesign\\kai_news_sub.utf8"
+STOP_INPUT = "D:\\Gdesign\\stopwords.utf8"
+OUTPUT_FILE = "D:\\Gdesign\\kaini_news_sub.utf8"
 
 
-def sub_punc():
+def sub_punc(stop_list):
 
     input_data = codecs.open(INPUT_FILE, 'r', 'utf-8')
     output_data = codecs.open(OUTPUT_FILE, 'w', 'utf-8')
@@ -20,7 +21,7 @@ def sub_punc():
         # \。\，\（\）\！\？\；\：\《\》\“\”\…\—\、\【\】
         for word in str_list:
 
-            if isPunc(word):
+            if isPunc(word) or isStopword(word, stop_list):
                 output_data.write(";")
             else:
                 output_data.write(word + "/")
@@ -44,5 +45,27 @@ def isPunc(word):
             continue
     return flag
 
+
+def isStopword(word, stop_list):
+
+    flag = False
+
+    for char in stop_list:
+        if word == char:
+            flag = True
+            break
+        else:
+            continue
+    return flag
+
 if __name__ == '__main__':
-    sub_punc()
+
+    stop_data = codecs.open(STOP_INPUT, 'r', 'utf-8')
+    stop_list = list()
+
+    for line in stop_data.readlines():
+        line = line.replace('\n', '')
+        line = line.replace('\ufeff', '')
+        stop_list.append(line)
+
+    sub_punc(stop_list)

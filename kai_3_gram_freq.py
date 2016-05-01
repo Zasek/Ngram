@@ -23,9 +23,9 @@ def thr_gram_process(INPUT_FILE, OUTPUT_FILE):
             length = len(words)
             i = 0
             while i < length-3:
-                if isStop(words[i]) or isStop(words[i+1]) or isStop(words[i+2]):
-                    i += 1
-                    continue
+                # if isStop(words[i]) or isStop(words[i+1]) or isStop(words[i+2]):
+                #     i += 1
+                #     continue
                 two_gram = words[i]+words[i+1]+words[i+2]
                 news_tree.insert(two_gram)
                 i += 1
