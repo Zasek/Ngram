@@ -4,7 +4,7 @@
 import codecs
 
 INPUT_FILES = "D:\\Grad\\SougouW\\SogouLabDic_8.dic"
-OUTPUT_FILES = "D:\\Gdesign\\sougouDic.utf8"
+OUTPUT_FILES = "D:\\Gdesign\\Verb_dic.utf8"
 
 
 def dictionary_p():
@@ -14,8 +14,14 @@ def dictionary_p():
 
     for line in input_data.readlines():
         wline = line.split()
-        word = wline[0]
-        output_data.write(word+"\n")
+        if len(wline) == 3:
+            attr = wline[2].split(',')
+            if len(attr) == 2 and attr[0] == 'V':
+                output_data.write(wline[0]+'\n')
+
+    input_data.close()
+    output_data.close()
+
 
 if __name__ == '__main__':
     dictionary_p()

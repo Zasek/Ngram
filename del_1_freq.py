@@ -3,8 +3,8 @@
 
 import codecs
 
-INPUT_FILES = "D:\\Gdesign\\kaini_3_gram_dic_filtered.utf8"
-OUTPUT_FILES = "D:\\Gdesign\\kaini_3_gram_dic_fin.utf8"
+INPUT_FILES = "D:\\Gdesign\\kaisan_3_gram_dic_filtered.utf8"
+OUTPUT_FILES = "D:\\Gdesign\\kaisan_3_gram_dic_fin.utf8"
 
 
 def del_1_freq():

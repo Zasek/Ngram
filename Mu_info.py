@@ -5,10 +5,10 @@ import codecs
 import Trie_tree
 import re
 
-ORI_FILE = "D:\\Gdesign\\kai_news_sub_2.utf8"
-OUT_FILE = "D:\\Gdesign\\Intresting.utf8"
+ORI_FILE = "D:\\Gdesign\\kaisan_news_sub_2.utf8"
+OUT_FILE = "D:\\Gdesign\\Intresting_kaisan.utf8"
 SOUGOUDIC = "D:\\Gdesign\\sougouDic.utf8"
-TWO_TABLE = "D:\\Gdesign\\kai_2_gram_fin.utf8"
+TWO_TABLE = "D:\\Gdesign\\kaisan_2_gram_dic_fin.utf8"
 SUM_WORDS = 22252581
 
 
@@ -119,7 +119,7 @@ def mutual_check(char_prob, pair_prob_dic):
                     else:
                         prob_cal = char_prob[first_char] * char_prob[second_char]
                         prob_index = pair_prob_dic.get(first_char+second_char)
-                        if prob_index > 0 and prob_index/prob_cal > 10:
+                        if prob_index > 0 and prob_index/prob_cal > 20:
                             if (not dic_tree.find(words[i]+words[j])) and (not filtered_tree.find(words[i]+words[j])):
                                 output_data.write("interesting:  " + words[i]+words[j] + '\n')
                                 pair_prob_dic[first_char+second_char] = -1

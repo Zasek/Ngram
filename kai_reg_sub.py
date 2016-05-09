@@ -4,13 +4,15 @@
 
 import re
 import codecs
+import Trie_tree
 
 INPUT_FILE = "D:\\Gdesign\\news_done.utf8"
 STOP_INPUT = "D:\\Gdesign\\stopwords.utf8"
-OUTPUT_FILE = "D:\\Gdesign\\kaini_news_sub.utf8"
+VERB_INPUT = "D:\\Gdesign\\Verb_dic.utf8"
+OUTPUT_FILE = "D:\\Gdesign\\kaisan_news_sub.utf8"
 
 
-def sub_punc(stop_list):
+def sub_punc(stop_list, verb_tree):
 
     input_data = codecs.open(INPUT_FILE, 'r', 'utf-8')
     output_data = codecs.open(OUTPUT_FILE, 'w', 'utf-8')
@@ -21,7 +23,7 @@ def sub_punc(stop_list):
         # \。\，\（\）\！\？\；\：\《\》\“\”\…\—\、\【\】
         for word in str_list:
 
-            if isPunc(word) or isStopword(word, stop_list):
+            if isPunc(word) or isStopword(word, stop_list) or verb_tree.find(word):
                 output_data.write(";")
             else:
                 output_data.write(word + "/")
@@ -68,4 +70,10 @@ if __name__ == '__main__':
         line = line.replace('\ufeff', '')
         stop_list.append(line)
 
-    sub_punc(stop_list)
+    verb_data = codecs.open(VERB_INPUT, 'r', 'utf-8')
+    verb_tree = Trie_tree.Trie()
+    for v_word in verb_data.readlines():
+        v_word = v_word.replace('\n', '')
+        verb_tree.insert(v_word)
+
+    sub_punc(stop_list, verb_tree)
